@@ -16,11 +16,13 @@ driver = webdriver.Chrome(service=selenium_service)
 driver.get("http://www.tinder.com")
 
 sleep(2)
-login_button = driver.find_element(by=By.XPATH, value='//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/header/div[1]/div[2]/div/button')
+
+login_button = driver.find_element(by=By.LINK_TEXT, value='Log in')
 login_button.click()
 
 sleep(2)
-fb_login = driver.find_element(by=By.XPATH, value='//*[@id="modal-manager"]/div/div/div[1]/div/div[3]/span/div[2]/button')
+#fb_login = driver.find_element(by=By.XPATH, value='//*[@id="c761984011"]/div/div/div[1]/div/div/div[3]/span/div[2]/button')
+fb_login = driver.find_element(by=By.CSS_SELECTOR, value='button[aria-label="Log in with Facebook"]')
 fb_login.click()
 
 sleep(2)
